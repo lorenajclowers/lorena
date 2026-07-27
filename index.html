@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorena J. Clowers | Clowers Growth Advisory</title>
+<meta name="description" content="Lorena J. Clowers helps businesses worldwide turn their websites into growth engines through strategic website design, SEO, and digital growth solutions.">
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0A1D3B;
+    --blue: #1B4F91;
+    --black: #0B0B0C;
+    --white: #FFFFFF;
+    --off-white: #F5F7FA;
+    --grey: #6B7280;
+    --light-grey: #E5E8EC;
+    --green: #1E7B3C;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--black);
+    line-height: 1.6;
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .section { padding: 100px 0; }
+  .section-alt { background: var(--off-white); }
+  .section-dark { background: var(--navy); color: var(--white); }
+  .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--white); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 14px;
+    display: inline-block;
+  }
+
+  .section-dark .eyebrow { color: rgba(255,255,255,0.6); }
+
+  .section-title { font-size: clamp(28px, 4vw, 42px); margin-bottom: 20px; }
+  .section-subtitle { font-size: 17px; color: var(--grey); max-width: 640px; margin-bottom: 50px; }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+  /* ANIMATIONS */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.active { opacity: 1; transform: scale(1); }
+  .reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.active { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-right.active { opacity: 1; transform: translateX(0); }
+
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+  .stagger-5 { transition-delay: 0.5s; }
+  .stagger-6 { transition-delay: 0.6s; }
+
+  @keyframes fadeInDown { from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes zoomIn { from { opacity:0; transform:scale(0.85); } to { opacity:1; transform:scale(1); } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  @keyframes pulse { 0%,100% { box-shadow:0 0 0 0 rgba(27,79,145,0.4); } 70% { box-shadow:0 0 0 15px rgba(27,79,145,0); } }
+  @keyframes spin { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  @keyframes growBar { from { width:0; } }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary { background: var(--navy); color: var(--white) !important; }
+  .btn-primary:hover { background: var(--blue); color: var(--white) !important; transform: translateY(-3px); box-shadow: 0 12px 24px rgba(10,29,59,0.25); }
+  .btn-outline { background: transparent; border: 2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); transform: translateY(-3px); }
+  .btn-outline-white { background: transparent; border: 2px solid rgba(255,255,255,0.5); color: var(--white); }
+  .btn-outline-white:hover { background: var(--white); color: var(--navy); transform: translateY(-3px); }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* NAVIGATION */
+  header {
+    position: fixed; top: 0; width: 100%;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--light-grey);
+    animation: fadeInDown 0.8s ease;
+  }
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px; max-width: 1180px; margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; transition: transform 0.4s ease; }
+  .logo:hover img { transform: rotate(10deg) scale(1.05); }
+  .logo-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: var(--navy); line-height: 1.1; }
+  .logo-text span { display: block; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; color: var(--grey); letter-spacing: 1px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a:not(.btn) { font-size: 14px; font-weight: 500; color: var(--navy); position: relative; padding-bottom: 4px; }
+  .nav-links a:not(.btn)::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--blue); transition:width 0.3s ease; }
+  .nav-links a:not(.btn):hover::after { width: 100%; }
+  .nav-links a:not(.btn):hover { color: var(--blue); }
+  .nav-links a.btn-primary { color: var(--white) !important; padding: 12px 26px; font-size: 14px; }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .menu-toggle span { width: 26px; height: 2px; background: var(--navy); transition: 0.3s; }
+
+  /* HERO */
+  .hero { padding: 170px 0 100px; background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%); text-align: center; }
+  .hero-banner {
+    width: 100%; min-height: 460px; border-radius: 12px; margin-bottom: 50px;
+    overflow: hidden; position: relative; background: var(--navy);
+    animation: zoomIn 1.1s cubic-bezier(0.16,1,0.3,1);
+    box-shadow: 0 20px 50px rgba(10,29,59,0.15);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-banner img { width: 100%; height: auto; max-height: 600px; object-fit: contain; display: block; }
+  .hero-photo {
+    width: 170px; height: 170px; border-radius: 50%;
+    margin: -140px auto 30px;
+    border: 6px solid var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative; z-index: 2; overflow: hidden;
+    animation: zoomIn 1s cubic-bezier(0.16,1,0.3,1) 0.3s backwards, float 5s ease-in-out infinite 1.5s;
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: clamp(32px, 5vw, 56px); max-width: 900px; margin: 0 auto 10px; animation: fadeInUp 0.9s ease 0.4s backwards; }
+  .hero h1 span { color: var(--blue); }
+  .hero .hero-sub { font-size: 19px; color: var(--grey); max-width: 660px; margin: 0 auto 40px; animation: fadeInUp 0.9s ease 0.6s backwards; line-height: 1.7; }
+  .hero .btn-group { justify-content: center; margin-bottom: 30px; animation: fadeInUp 0.9s ease 0.8s backwards; }
+  .hero-tag { font-size: 13px; letter-spacing: 1px; color: var(--grey); text-transform: uppercase; animation: fadeInUp 0.9s ease 1s backwards; }
+
+  /* TRUST BAR */
+  .trust-bar { background: var(--navy); padding: 30px 0; }
+  .trust-bar .container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center; }
+  .trust-bar span { color: var(--white); font-size: 14px; font-weight: 500; letter-spacing: 0.5px; opacity: 0.9; position: relative; padding-bottom: 6px; cursor: default; }
+  .trust-bar span::after { content:''; position:absolute; bottom:0; left:50%; width:0; height:1px; background:var(--white); transition:0.4s ease; transform:translateX(-50%); }
+  .trust-bar span:hover::after { width: 100%; }
+
+  /* WHY CHOOSE SECTION */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .why-photo { width: 100%; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 50px rgba(10,29,59,0.15); }
+  .why-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .why-photo:hover img { transform: scale(1.04); }
+  .why-text h2 { margin-bottom: 16px; }
+  .why-text > p { color: var(--grey); font-size: 16px; margin-bottom: 30px; }
+  .why-list li {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--light-grey);
+    font-size: 15px;
+  }
+  .why-list li:last-child { border-bottom: none; }
+  .why-check {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--navy); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .why-list li strong { display: block; color: var(--navy); font-size: 15px; margin-bottom: 2px; }
+  .why-list li span { color: var(--grey); font-size: 13.5px; }
+
+  /* MISSION */
+  .mission { display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: center; }
+  .mission-photo { width: 100%; aspect-ratio: 1/1.1; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(10,29,59,0.12); }
+  .mission-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .mission-photo:hover img { transform: scale(1.06); }
+  .mission-text h2 { margin-bottom: 20px; }
+  .mission-text p { color: var(--grey); margin-bottom: 18px; font-size: 16px; }
+  .mission-text strong { color: var(--navy); }
+
+  /* WHO I HELP */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .who-card {
+    background: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: 12px;
+    padding: 24px 18px;
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  .who-card:hover { border-color: var(--navy); transform: translateY(-6px); box-shadow: 0 15px 30px rgba(10,29,59,0.1); }
+  .who-icon { font-size: 28px; margin-bottom: 10px; }
+  .who-card p { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+
+  /* PROBLEMS */
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .problem-card {
+    background: var(--white); border: 1px solid var(--light-grey);
+    border-radius: 10px; padding: 26px; font-size: 15px; font-weight: 500;
+    display: flex; align-items: flex-start; gap: 12px;
+    transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .problem-card:hover { border-color: var(--navy); box-shadow: 0 15px 30px rgba(10,29,59,0.1); transform: translateY(-6px) scale(1.02); }
+  .problem-card .mark { color: #C0392B; font-weight: 700; font-size: 18px; transition: transform 0.3s ease; flex-shrink: 0; }
+  .problem-card:hover .mark { transform: rotate(90deg) scale(1.2); }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+  .service-card { background: var(--white); border: 1px solid var(--light-grey); border-radius: 12px; padding: 36px; transition: all 0.45s cubic-bezier(0.16,1,0.3,1); }
+  .service-card:hover { box-shadow: 0 20px 45px rgba(10,29,59,0.12); transform: translateY(-8px); border-color: var(--navy); }
+  .service-icon { width: 54px; height: 54px; background: var(--navy); color: var(--white); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; transition: transform 0.4s ease, background 0.4s ease; }
+  .service-card:hover .service-icon { transform: rotate(-8deg) scale(1.1); background: var(--blue); }
+  .service-card h3 { font-size: 21px; margin-bottom: 12px; }
+  .service-card > p { color: var(--grey); font-size: 14px; margin-bottom: 18px; }
+  .service-list li { font-size: 14px; color: var(--black); padding: 6px 0; border-top: 1px solid var(--light-grey); display: flex; align-items: center; gap: 8px; transition: transform 0.3s ease, color 0.3s ease; }
+  .service-list li:hover { transform: translateX(6px); color: var(--blue); }
+  .service-list li:first-child { border-top: none; }
+  .service-list li::before { content: "→"; color: var(--blue); font-weight: 700; }
+
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+  .process-step { text-align: center; }
+  .process-number { width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin: 0 auto 20px; transition: all 0.4s ease; }
+  .process-step:hover .process-number { background: var(--white); color: var(--navy); transform: scale(1.15) rotate(360deg); animation: pulse 1.5s infinite; }
+  .process-step h4 { font-size: 17px; margin-bottom: 10px; }
+  .process-step p { font-size: 14px; opacity: 0.75; }
+
+  /* CASE STUDIES */
+  .case-study { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; margin-bottom: 100px; }
+  .case-study:last-child { margin-bottom: 0; }
+  .case-study:nth-child(even) { direction: rtl; }
+  .case-study:nth-child(even) > div { direction: ltr; }
+  .case-images { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: sticky; top: 110px; }
+  .case-img { aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 10px 25px rgba(10,29,59,0.1); }
+  .case-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .case-img:hover img { transform: scale(1.1); }
+  .case-img .label { position: absolute; top: 10px; left: 10px; background: var(--navy); color: white; font-size: 11px; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; z-index: 2; }
+  .case-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); font-weight: 700; margin-bottom: 12px; }
+  .case-content h3 { font-size: 26px; margin-bottom: 6px; }
+  .case-content p { color: var(--grey); margin-bottom: 16px; font-size: 15px; }
+  .case-content h5 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); margin: 20px 0 10px; }
+  .case-subtitle { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 18px; }
+  .case-meta { background: var(--off-white); border-left: 3px solid var(--navy); padding: 16px 20px; border-radius: 6px; margin-bottom: 22px; }
+  .case-meta div { font-size: 14px; color: var(--grey); margin-bottom: 8px; line-height: 1.6; }
+  .case-meta div:last-child { margin-bottom: 0; }
+  .case-meta strong { color: var(--navy); }
+  .case-check-list { margin-bottom: 22px; }
+  .case-check-list li { font-size: 14.5px; color: var(--grey); padding: 6px 0 6px 28px; position: relative; }
+  .case-check-list li::before { content: "\2713"; position: absolute; left: 0; top: 6px; color: var(--green); font-weight: 700; font-size: 15px; }
+  .result-box { background: var(--off-white); border: 1px solid var(--light-grey); border-radius: 10px; padding: 20px 22px; margin-bottom: 22px; }
+  .result-box p { color: var(--black); font-size: 15px; margin-bottom: 0; }
+  .score-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+  .score-box { background: var(--white); border: 1px solid var(--light-grey); border-radius: 10px; padding: 20px; text-align: center; }
+  .score-box.after { border-color: var(--green); }
+  .score-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--grey); margin-bottom: 10px; font-weight: 600; }
+  .score-number { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #C0392B; margin-bottom: 10px; }
+  .score-box.after .score-number { color: var(--green); }
+  .score-bar-track { width: 100%; height: 8px; background: var(--light-grey); border-radius: 4px; overflow: hidden; }
+  .score-bar-fill { height: 100%; border-radius: 4px; background: #C0392B; animation: growBar 1.4s cubic-bezier(0.16,1,0.3,1) backwards; }
+  .score-box.after .score-bar-fill { background: var(--green); }
+  .result-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .result-tags span { background: var(--off-white); border: 1px solid var(--light-grey); padding: 8px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; color: var(--navy); transition: all 0.3s ease; }
+  .result-tags span:hover { background: var(--navy); color: var(--white); transform: translateY(-3px); }
+  .portfolio-summary { background: var(--navy); border-radius: 16px; padding: 50px; margin-top: 60px; color: var(--white); }
+  .portfolio-summary h3 { color: var(--white); font-size: 24px; margin-bottom: 26px; text-align: center; }
+  .summary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .summary-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.06); padding: 16px 18px; border-radius: 8px; }
+  .summary-item .check { color: #6FCF97; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .testimonial-card { background: var(--white); border-radius: 12px; padding: 34px; border: 1px solid var(--light-grey); transition: all 0.4s ease; display: flex; flex-direction: column; position: relative; }
+  .testimonial-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 80px; color: var(--light-grey); position: absolute; top: 10px; left: 24px; line-height: 1; }
+  .testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(10,29,59,0.1); }
+  .stars { color: #E8B923; font-size: 15px; margin-bottom: 16px; letter-spacing: 3px; position: relative; }
+  .testimonial-card p { font-size: 14.5px; color: #374151; margin-bottom: 24px; font-style: italic; flex-grow: 1; line-height: 1.75; position: relative; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--light-grey); padding-top: 16px; }
+  .author-initials { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  .author-name { font-weight: 700; font-size: 14px; color: var(--navy); }
+  .author-business { font-size: 12px; color: var(--grey); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 340px 1fr; gap: 60px; align-items: center; }
+  .about-photo { width: 100%; aspect-ratio: 3/4; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 45px rgba(10,29,59,0.15); }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .about-photo:hover img { transform: scale(1.06); }
+  .about-text .eyebrow { margin-bottom: 8px; }
+  .about-text h2 { margin-bottom: 6px; }
+  .about-text .role { color: var(--grey); font-size: 15px; margin-bottom: 24px; font-weight: 500; }
+  .about-text p { color: var(--grey); margin-bottom: 18px; font-size: 15.5px; }
+  .about-text strong { color: var(--navy); }
+  .about-stats { display: flex; gap: 40px; margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--light-grey); }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--navy); font-weight: 700; }
+  .stat-label { font-size: 13px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* CONTACT */
+  .contact-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 60px; }
+  .contact-info h2 { color: var(--white); margin-bottom: 20px; }
+  .contact-info p { color: rgba(255,255,255,0.75); margin-bottom: 30px; font-size: 15px; }
+  .contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; color: var(--white); font-size: 14px; transition: transform 0.3s ease; }
+  .contact-detail:hover { transform: translateX(8px); }
+  .contact-detail .icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s ease; }
+  .contact-detail:hover .icon { background: var(--blue); }
+  .social-icons { display: flex; gap: 14px; margin-top: 30px; }
+  .social-icons a { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .social-icons a:hover { background: var(--white); transform: translateY(-6px) rotate(8deg); }
+  .social-icons svg { width: 20px; height: 20px; fill: var(--white); transition: fill 0.3s ease; }
+  .social-icons a:hover svg { fill: var(--navy); }
+  .contact-form { background: var(--white); border-radius: 14px; padding: 40px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+  .form-group input, .form-group textarea { width: 100%; padding: 13px 16px; border: 1px solid var(--light-grey); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--black); background: var(--off-white); transition: all 0.3s ease; }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--navy); background: var(--white); box-shadow: 0 0 0 4px rgba(27,79,145,0.1); }
+  .checkbox-group { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 24px; }
+  .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--black); }
+  .checkbox-item input { width: auto; }
+  .contact-form .btn { width: 100%; text-align: center; font-size: 15px; }
+  .form-status { display: none; padding: 16px 20px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; font-weight: 500; }
+  .form-status.success { background: #E7F5EC; color: var(--green); border: 1px solid #B5E4C4; display: block; }
+  .form-status.error { background: #FCEBEA; color: #C0392B; border: 1px solid #F3C4C0; display: block; }
+  .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-top-color: var(--white); border-radius: 50%; animation: spin 0.7s linear infinite; margin-right: 8px; vertical-align: middle; }
+
+  /* FOOTER */
+  footer { background: var(--black); color: rgba(255,255,255,0.7); padding: 70px 0 30px; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .footer-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+  .footer-logo .logo-text { color: var(--white); }
+  .footer-logo .logo-text span { color: rgba(255,255,255,0.5); }
+  .footer-tagline { font-size: 14px; max-width: 280px; font-style: italic; margin-bottom: 20px; }
+  .footer-social { display: flex; gap: 12px; }
+  .footer-social a { width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .footer-social a:hover { background: var(--blue); transform: translateY(-5px); }
+  .footer-social svg { width: 16px; height: 16px; fill: var(--white); }
+  .footer-col h5 { color: var(--white); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+  .footer-col a { display: block; font-size: 14px; margin-bottom: 12px; color: rgba(255,255,255,0.65); transition: all 0.3s ease; }
+  .footer-col a:hover { color: var(--white); padding-left: 6px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 30px; font-size: 13px; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom a { color: rgba(255,255,255,0.65); }
+  .footer-bottom a:hover { color: var(--white); }
+  .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  /* BACK TO TOP */
+  .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--navy); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s ease; z-index: 999; box-shadow: 0 10px 25px rgba(10,29,59,0.3); }
+  .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .back-to-top:hover { background: var(--blue); transform: translateY(-5px); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .who-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: flex; }
+    .mission, .about-grid, .contact-wrap, .why-grid { grid-template-columns: 1fr; }
+    .mission-photo, .about-photo, .why-photo { max-width: 300px; margin: 0 auto; }
+    .problems-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .case-study, .case-study:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
+    .case-images { position: static; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .section { padding: 70px 0; }
+    .problems-grid, .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .checkbox-group { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .trust-bar .container { flex-direction: column; align-items: center; }
+    .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+    .case-images { grid-template-columns: 1fr; }
+    .score-comparison { grid-template-columns: 1fr; }
+    .portfolio-summary { padding: 30px 20px; }
+    .about-stats { flex-direction: column; gap: 20px; }
+    .who-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-banner { min-height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Lorena J. Clowers Logo">
+      <div class="logo-text">
+        LORENA J. CLOWERS
+        <span>Clowers Growth Advisory</span>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact" class="btn btn-primary">Contact Me</a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-banner">
+      <img src="banner.png" alt="Clowers Growth Advisory Banner">
+    </div>
+    <div class="hero-photo">
+      <img src="lorena.png" alt="Lorena J. Clowers">
+    </div>
+    <h1>I Help Businesses Turn Their Websites Into <span>Growth Engines</span></h1>
+    <p class="hero-sub">Strategic websites, SEO, and digital experiences designed to attract customers, build trust, and help businesses grow online.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-primary">Start My Website Growth Journey</a>
+      <a href="#work" class="btn btn-outline">View My Work</a>
+    </div>
+    <div class="hero-tag">Trusted by businesses worldwide &nbsp;&#8226;&nbsp; 12 Years of Digital Experience</div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <span>12 Years Experience</span>
+    <span>Worldwide Clients</span>
+    <span>Website Design &amp; Development</span>
+    <span>SEO &amp; Strategy</span>
+    <span>Before &amp; After Results</span>
+  </div>
+</div>
+
+<!-- WHY CHOOSE LORENA -->
+<section class="section">
+  <div class="container why-grid">
+    <div class="why-photo reveal-left">
+      <img src="lorena.png" alt="Lorena J. Clowers Digital Growth Consultant">
+    </div>
+    <div class="why-text reveal-right">
+      <span class="eyebrow">Why Businesses Choose Us</span>
+      <h2>Why Businesses Choose Clowers Growth Advisory</h2>
+      <p>There are many digital agencies and freelancers out there. Here is why businesses across industries choose to work with Lorena J. Clowers.</p>
+      <ul class="why-list">
+        <li>
+          <div class="why-check">&#10003;</div>
+          <div><strong>Strategy Before Design</strong><span>Every project starts with understanding your business goals, not just how things look.</span></div>
+        </li>
+        <li>
+          <div class="why-check">&#10003;</div>
+          <div><strong>Solutions Built Around Business Goals</strong><span>The work is always connected to real outcomes, not just deliverables.</span></div>
+        </li>
+        <li>
+          <div class="why-check">&#10003;</div>
+          <div><strong>Experience Across Industries</strong><span>From real estate to coaching to publishing, we understand how different businesses grow online.</span></div>
+        </li>
+        <li>
+          <div class="why-check">&#10003;</div>
+          <div><strong>Focus on Measurable Improvement</strong><span>Every recommendation is designed to move the needle, not just check a box.</span></div>
+        </li>
+        <li>
+          <div class="why-check">&#10003;</div>
+          <div><strong>Global Digital Experience</strong><span>Working with clients worldwide brings broader perspective and stronger solutions.</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section section-alt">
+  <div class="container mission">
+    <div class="mission-photo reveal-left">
+      <img src="lorena.png" alt="Lorena J. Clowers Mission">
+    </div>
+    <div class="mission-text reveal-right">
+      <span class="eyebrow">My Mission</span>
+      <h2>More Than a Website. A Digital Foundation for Growth.</h2>
+      <p>Every business deserves a digital presence that truly works. Too many businesses invest in websites that look average, perform poorly, and fail to bring in the results they deserve.</p>
+      <p>My name is <strong>Lorena J. Clowers</strong>, Founder of <strong>Clowers Growth Advisory</strong>. For over 12 years, I have helped businesses across the world build powerful digital experiences through strategic website design, user experience improvements, SEO, and digital growth solutions.</p>
+      <p>I do not just build websites. I build digital experiences that help businesses grow.</p>
+      <a href="#contact" class="btn btn-primary" style="margin-top:10px;">Book a Discovery Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHO I HELP -->
+<section class="section section-dark" id="who">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">Who I Work With</span>
+    <h2 class="section-title center reveal">Who I Help</h2>
+    <p class="section-subtitle center reveal" style="color:rgba(255,255,255,0.7);">I work with businesses and professionals at every stage who are ready to grow their digital presence and attract more clients online.</p>
+    <div class="who-grid">
+      <div class="who-card reveal">
+        <div class="who-icon">&#127981;</div>
+        <p>Small Businesses</p>
+      </div>
+      <div class="who-card reveal stagger-1">
+        <div class="who-icon">&#128640;</div>
+        <p>Startups</p>
+      </div>
+      <div class="who-card reveal stagger-2">
+        <div class="who-icon">&#128188;</div>
+        <p>Professional Services</p>
+      </div>
+      <div class="who-card reveal stagger-3">
+        <div class="who-icon">&#128101;</div>
+        <p>Consultants</p>
+      </div>
+      <div class="who-card reveal stagger-4">
+        <div class="who-icon">&#127775;</div>
+        <p>Coaches</p>
+      </div>
+      <div class="who-card reveal">
+        <div class="who-icon">&#127968;</div>
+        <p>Real Estate Businesses</p>
+      </div>
+      <div class="who-card reveal stagger-1">
+        <div class="who-icon">&#128722;</div>
+        <p>E-commerce Brands</p>
+      </div>
+      <div class="who-card reveal stagger-2">
+        <div class="who-icon">&#127775;</div>
+        <p>Personal Brands</p>
+      </div>
+      <div class="who-card reveal stagger-3">
+        <div class="who-icon">&#128200;</div>
+        <p>Growing Companies</p>
+      </div>
+      <div class="who-card reveal stagger-4">
+        <div class="who-icon">&#127760;</div>
+        <p>Organisations Worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS SECTION -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">Website Problems We Solve</span>
+    <h2 class="section-title center reveal">Does Any of This Sound Familiar?</h2>
+    <p class="section-subtitle center reveal">Clients come to us when their website is not delivering the results their business deserves.</p>
+    <div class="problems-grid">
+      <div class="problem-card reveal-scale"><span class="mark">&#10005;</span> I need a website but do not know where to start</div>
+      <div class="problem-card reveal-scale stagger-1"><span class="mark">&#10005;</span> We have a website but it is not bringing customers</div>
+      <div class="problem-card reveal-scale stagger-2"><span class="mark">&#10005;</span> Our website looks outdated and unprofessional</div>
+      <div class="problem-card reveal-scale"><span class="mark">&#10005;</span> Our competitors appear higher on Google</div>
+      <div class="problem-card reveal-scale stagger-1"><span class="mark">&#10005;</span> Our website is slow and losing visitors</div>
+      <div class="problem-card reveal-scale stagger-2"><span class="mark">&#10005;</span> Visitors leave without contacting us</div>
+      <div class="problem-card reveal-scale"><span class="mark">&#10005;</span> Our website does not work properly on mobile</div>
+      <div class="problem-card reveal-scale stagger-1"><span class="mark">&#10005;</span> The website does not reflect our business quality</div>
+      <div class="problem-card reveal-scale stagger-2"><span class="mark">&#10005;</span> We have no clear digital strategy</div>
+      <div class="problem-card reveal-scale"><span class="mark">&#10005;</span> Our website is not generating leads or enquiries</div>
+      <div class="problem-card reveal-scale stagger-1"><span class="mark">&#10005;</span> Our online presence feels invisible</div>
+      <div class="problem-card reveal-scale stagger-2"><span class="mark">&#10005;</span> We invested in a website that is not delivering</div>
+    </div>
+    <div class="center reveal" style="margin-top:50px;">
+      <a href="#contact" class="btn btn-primary">Let's Fix This Together</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">What I Offer</span>
+    <h2 class="section-title center reveal">Digital Solutions Designed Around Your Growth</h2>
+    <p class="section-subtitle center reveal">Whatever your business needs online, there is a solution here for it.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">&#128421;</div>
+        <h3>Website Design &amp; Development</h3>
+        <p>Creating professional, modern websites built around your business goals.</p>
+        <ul class="service-list">
+          <li>Custom website design</li>
+          <li>Responsive development</li>
+          <li>Website redesign</li>
+          <li>Landing pages</li>
+          <li>E-commerce websites</li>
+          <li>Maintenance and updates</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon">&#128203;</div>
+        <h3>Website Strategy</h3>
+        <p>Building a clear, structured plan that gives your website real direction.</p>
+        <ul class="service-list">
+          <li>Website planning and structure</li>
+          <li>Customer journey mapping</li>
+          <li>Content strategy</li>
+          <li>Competitor analysis</li>
+          <li>Audience research</li>
+          <li>Growth roadmaps</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon">&#127919;</div>
+        <h3>User Experience (UX)</h3>
+        <p>Creating websites visitors understand, enjoy, and return to.</p>
+        <ul class="service-list">
+          <li>UX reviews</li>
+          <li>Navigation improvements</li>
+          <li>Mobile optimisation</li>
+          <li>Usability analysis</li>
+          <li>Conversion improvements</li>
+          <li>Accessibility upgrades</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">&#128269;</div>
+        <h3>SEO &amp; Search Visibility</h3>
+        <p>Helping your business become easier to find online.</p>
+        <ul class="service-list">
+          <li>Full SEO audits</li>
+          <li>Keyword research</li>
+          <li>On-page SEO</li>
+          <li>Technical SEO</li>
+          <li>Content optimisation</li>
+          <li>Local SEO strategy</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon">&#128200;</div>
+        <h3>Digital Growth Solutions</h3>
+        <p>Improving your overall online performance and results.</p>
+        <ul class="service-list">
+          <li>Full digital strategy</li>
+          <li>Lead generation solutions</li>
+          <li>Online presence improvement</li>
+          <li>Conversion optimisation</li>
+          <li>Performance tracking</li>
+          <li>Digital consulting</li>
+        </ul>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon">&#129309;</div>
+        <h3>Partnerships &amp; Projects</h3>
+        <p>Open to collaborations, partnerships, and unique digital opportunities.</p>
+        <ul class="service-list">
+          <li>Business collaborations</li>
+          <li>Speaking opportunities</li>
+          <li>Consulting engagements</li>
+          <li>Custom digital projects</li>
+          <li>Long-term partnerships</li>
+          <li>Advisory roles</li>
+        </ul>
+      </div>
+    </div>
+    <div class="center reveal" style="margin-top:50px;">
+      <a href="#contact" class="btn btn-primary">Contact Me to Discuss Your Needs</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section section-dark">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">My Process</span>
+    <h2 class="section-title center reveal">A Simple, Effective Process</h2>
+    <p class="section-subtitle center reveal" style="color:rgba(255,255,255,0.7);">No confusion, no guesswork, just clear steps toward your digital growth.</p>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-number">01</div>
+        <h4>Discover</h4>
+        <p>Understand your business, goals, audience, and challenges.</p>
+      </div>
+      <div class="process-step reveal stagger-1">
+        <div class="process-number">02</div>
+        <h4>Strategise</h4>
+        <p>Create a clear roadmap built around your needs.</p>
+      </div>
+      <div class="process-step reveal stagger-2">
+        <div class="process-number">03</div>
+        <h4>Design</h4>
+        <p>Build an experience that represents your brand.</p>
+      </div>
+      <div class="process-step reveal stagger-3">
+        <div class="process-number">04</div>
+        <h4>Develop</h4>
+        <p>Create a functional, responsive digital solution.</p>
+      </div>
+      <div class="process-step reveal stagger-4">
+        <div class="process-number">05</div>
+        <h4>Improve</h4>
+        <p>Analyse performance and continue optimising.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK / CASE STUDIES -->
+<section class="section" id="work">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">Featured Projects</span>
+    <h2 class="section-title center reveal">Selected Digital Transformations</h2>
+    <p class="section-subtitle center reveal">Real businesses. Real challenges. Strategic digital improvements designed to help brands grow online.</p>
+
+    <!-- PROJECT 01 -->
+    <div class="case-study">
+      <div class="case-images reveal-left">
+        <div class="case-img"><span class="label">Before</span><img src="before 1.png" alt="Alyce B. Frick before"></div>
+        <div class="case-img"><span class="label">After</span><img src="after 1.png" alt="Alyce B. Frick after"></div>
+      </div>
+      <div class="case-content reveal-right">
+        <span class="case-tag">Project 01</span>
+        <h3>Alyce B. Frick Book Marketing</h3>
+        <p class="case-subtitle">Lead Generation &amp; Website Growth Transformation</p>
+        <div class="case-meta">
+          <div><strong>Industry:</strong> Book Marketing / Author Services</div>
+        </div>
+        <h5>The Challenge</h5>
+        <p>Alyce had valuable expertise and a strong service offering, but the website was not effectively turning visitors into potential clients. The main challenge was creating a digital experience that could:</p>
+        <ul class="case-check-list">
+          <li>Explain services clearly to authors</li>
+          <li>Build trust and credibility quickly</li>
+          <li>Encourage visitors to take action</li>
+          <li>Generate more qualified enquiries</li>
+        </ul>
+        <h5>The Strategy</h5>
+        <p>We focused on improving the website as a lead generation tool through:</p>
+        <ul class="case-check-list">
+          <li>Website strategy and structure</li>
+          <li>Conversion focused design</li>
+          <li>Improved service positioning</li>
+          <li>User journey improvements</li>
+          <li>Stronger calls to action</li>
+          <li>Lead generation pathways</li>
+        </ul>
+        <h5>The Result</h5>
+        <div class="result-box">
+          <p>The website became a stronger client acquisition platform, helping attract more author enquiries and creating a clearer path for visitors to become potential clients.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 02 -->
+    <div class="case-study">
+      <div class="case-images reveal-left">
+        <div class="case-img"><span class="label">Before</span><img src="before 2.png" alt="ELIKA New York before"></div>
+        <div class="case-img"><span class="label">After</span><img src="after 2.png" alt="ELIKA New York after"></div>
+      </div>
+      <div class="case-content reveal-right">
+        <span class="case-tag">Project 02</span>
+        <h3>ELIKA New York Real Estate</h3>
+        <p class="case-subtitle">SEO &amp; Search Visibility Transformation</p>
+        <div class="case-meta">
+          <div><strong>Industry:</strong> Luxury Real Estate</div>
+        </div>
+        <h5>The Challenge</h5>
+        <p>A premium real estate brand needs more than a beautiful website. It needs to be discovered by the right audience at the right time. The challenge was strengthening search visibility and improving how potential clients discover important pages online.</p>
+        <h5>The Strategy</h5>
+        <p>We focused on improving the website foundation through:</p>
+        <ul class="case-check-list">
+          <li>SEO strategy and implementation</li>
+          <li>Search visibility improvements</li>
+          <li>Website structure optimisation</li>
+          <li>Content organisation</li>
+          <li>Better user navigation</li>
+        </ul>
+        <h5>The Result</h5>
+        <div class="result-box">
+          <p>The website achieved stronger branded search visibility, appearing prominently in Google results for ELIKA New York Real Estate searches, with key pages becoming easier for users to discover.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 03 -->
+    <div class="case-study">
+      <div class="case-images reveal-left">
+        <div class="case-img"><span class="label">Before</span><img src="before 3.png" alt="The NYC Life Coach before"></div>
+        <div class="case-img"><span class="label">After</span><img src="after 3.png" alt="The NYC Life Coach after"></div>
+      </div>
+      <div class="case-content reveal-right">
+        <span class="case-tag">Project 03</span>
+        <h3>The NYC Life Coach</h3>
+        <p class="case-subtitle">Website Performance &amp; User Experience Transformation</p>
+        <div class="case-meta">
+          <div><strong>Industry:</strong> Coaching / Personal Development</div>
+        </div>
+        <h5>The Challenge</h5>
+        <p>The website needed performance improvements to create a smoother experience for visitors. A slow website affects engagement, user experience, and how visitors interact with a brand online.</p>
+        <h5>The Strategy</h5>
+        <p>We focused on improving the website experience through:</p>
+        <ul class="case-check-list">
+          <li>Performance optimisation</li>
+          <li>Loading speed improvements</li>
+          <li>Mobile experience enhancements</li>
+          <li>Technical improvements</li>
+          <li>User experience refinements</li>
+        </ul>
+        <h5>The Result</h5>
+        <p>The website performance score improved significantly, creating a faster and smoother browsing experience for visitors.</p>
+        <div class="score-comparison">
+          <div class="score-box">
+            <div class="score-label">Before</div>
+            <div class="score-number">39</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:39%;"></div></div>
+          </div>
+          <div class="score-box after">
+            <div class="score-label">After</div>
+            <div class="score-number">72</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:72%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO SUMMARY -->
+    <div class="portfolio-summary reveal">
+      <h3>What We Help Businesses Improve</h3>
+      <div class="summary-grid">
+        <div class="summary-item"><span class="check">&#10003;</span> Websites that do not generate enquiries</div>
+        <div class="summary-item"><span class="check">&#10003;</span> Businesses struggling to get found online</div>
+        <div class="summary-item"><span class="check">&#10003;</span> Slow websites affecting customer experience</div>
+        <div class="summary-item"><span class="check">&#10003;</span> Poor user journeys that lose visitors</div>
+        <div class="summary-item"><span class="check">&#10003;</span> Websites that do not represent the quality of the brand</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <span class="eyebrow center reveal" style="display:block;">Client Words</span>
+    <h2 class="section-title center reveal">What Clients Say</h2>
+    <p class="section-subtitle center reveal">From book marketing to luxury real estate to coaching, here is what clients experienced working with Clowers Growth Advisory.</p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"As someone working in author services, I needed a website that would speak directly to writers looking for marketing support. Lorena understood that immediately. She helped transform how my services were presented online, created a clearer path for potential clients to find and connect with my work, and brought a level of attention to detail I had not found elsewhere. Authors are now discovering my business more easily, and the enquiries have improved. The process felt strategic from the very first conversation."</p>
+        <div class="testimonial-author">
+          <div class="author-initials">AF</div>
+          <div>
+            <div class="author-name">Alyce B. Frick</div>
+            <div class="author-business">Alyce B. Frick Book Marketing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal stagger-1">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"In luxury real estate, being found online is everything. Buyers are searching before they ever make contact, and if your website is not visible, you lose them before they even know you exist. Lorena brought a structured and professional approach to improving our search presence. The website became more organised, the right pages became easier to discover, and the overall digital foundation is now stronger. Her understanding of how strategy and visibility work together made a real difference."</p>
+        <div class="testimonial-author">
+          <div class="author-initials">EN</div>
+          <div>
+            <div class="author-name">ELIKA New York</div>
+            <div class="author-business">ELIKA New York Real Estate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal stagger-2">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"My website was holding my coaching practice back without me fully realising it. When Lorena looked at it, she immediately identified what was slowing things down and affecting how visitors experienced the site. She went beyond surface-level changes and focused on things that actually matter for someone browsing and deciding whether to trust you. The improvements made the site feel faster, more professional, and more aligned with who I am as a coach. Her thoughtful approach made the whole process feel very personalised."</p>
+        <div class="testimonial-author">
+          <div class="author-initials">NC</div>
+          <div>
+            <div class="author-name">The NYC Life Coach</div>
+            <div class="author-business">Coaching / Personal Development</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-photo reveal-left">
+      <img src="lorena.png" alt="Lorena J. Clowers About">
+    </div>
+    <div class="about-text reveal-right">
+      <span class="eyebrow">The Person Behind The Work</span>
+      <h2>Lorena J. Clowers</h2>
+      <div class="role">Founder, Clowers Growth Advisory</div>
+      <p>For over 12 years, I have worked at the intersection of design, strategy, and digital growth. My passion has always been helping businesses show up online in a way that truly reflects their value.</p>
+      <p>I started <strong>Clowers Growth Advisory</strong> because I saw too many businesses struggling with websites that were holding them back rather than helping them grow. I knew there was a better way.</p>
+      <p>My approach combines creativity, strategy, and a deep understanding of what makes a digital experience actually work. Every project receives my full attention, honest advice, and genuine commitment to results.</p>
+      <p><strong>When you work with me, you are not just getting a service. You are getting a strategic partner invested in your growth.</strong></p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="stat-number">Global</div>
+          <div class="stat-label">Client Reach</div>
+        </div>
+        <div>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Commitment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-dark" id="contact">
+  <div class="container contact-wrap">
+    <div class="contact-info reveal-left">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Have a Project in Mind?</h2>
+      <p>Whether you need a complete website transformation, stronger search visibility, a better digital strategy, or simply do not know where to start, I am here to help. The first step is a conversation.</p>
+      <div class="contact-detail">
+        <div class="icon">&#9993;</div> lorenaclowers.web@gmail.com
+      </div>
+      <div class="contact-detail">
+        <div class="icon">&#128205;</div> Serving Clients Worldwide
+      </div>
+      <div class="contact-detail">
+        <div class="icon">&#128172;</div> Response within 24 to 48 hours
+      </div>
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/@lorenajclowers" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 448 512"><path d="M448,209.9a210.1,210.1,0,0,1-122.8-39.3V349.4A162.6,162.6,0,1,1,185,188.3V278.2a74.6,74.6,0,1,0,52.2,71.2V0h89.9A121.4,121.4,0,0,0,328,20.2a122.2,122.2,0,0,0,53.5,101.4A121,121,0,0,0,448,140.6Z"/></svg>
+        </a>
+        <a href="https://x.com/LorenaJClowers" target="_blank" rel="noopener" aria-label="X">
+          <svg viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lorenajclowers/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 448 512"><path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-70.92-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,70.94-6.43,94.33s-1.85,73.27,6.43,94.33a54,54,0,0,0,30.41,30.41c21,8.29,70.92,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-70.94,6.43-94.33S357.11,182.7,348.71,161.65ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM398.8,80H49.2A49.2,49.2,0,0,0,0,129.2V382.8A49.2,49.2,0,0,0,49.2,432H398.8a49.2,49.2,0,0,0,49.2-49.2V129.2A49.2,49.2,0,0,0,398.8,80Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@lorenajclowers" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256 15 256s0 89 11.3 131.9c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.1 48.3-47.8 11.3-42.9 11.3-131.9 11.3-131.9s0-89-11.3-131.9zM232 336V176l142.7 80L232 336z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal-right" id="contactForm" action="https://formspree.io/f/mwvgajgk" method="POST">
+      <div class="form-status" id="formStatus"></div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="business">Business Name</label>
+          <input type="text" id="business" name="business" placeholder="Your business">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Optional">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>What do you need help with?</label>
+        <div class="checkbox-group">
+          <div class="checkbox-item"><input type="checkbox" name="services" value="Website Design and Development"> Website Design &amp; Development</div>
+          <div class="checkbox-item"><input type="checkbox" name="services" value="Website Strategy"> Website Strategy</div>
+          <div class="checkbox-item"><input type="checkbox" name="services" value="User Experience"> User Experience (UX)</div>
+          <div class="checkbox-item"><input type="checkbox" name="services" value="SEO and Search Visibility"> SEO &amp; Search Visibility</div>
+          <div class="checkbox-item"><input type="checkbox" name="services" value="Digital Growth Strategy"> Digital Growth Strategy</div>
+          <div class="checkbox-item"><input type="checkbox" name="services" value="Not Sure"> Not Sure, Need Guidance</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell me about your project</label>
+        <textarea id="message" name="message" placeholder="Share a few details about what you need..." required></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New Enquiry from Website">
+      <button type="submit" class="btn btn-primary" id="submitBtn">Start My Website Growth Journey</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="logo.png" alt="Lorena J. Clowers Logo">
+          <div class="logo-text">LORENA J. CLOWERS<span>Clowers Growth Advisory</span></div>
+        </div>
+        <p class="footer-tagline">"Building Digital Experiences That Help Businesses Grow"</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@lorenajclowers" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 448 512"><path d="M448,209.9a210.1,210.1,0,0,1-122.8-39.3V349.4A162.6,162.6,0,1,1,185,188.3V278.2a74.6,74.6,0,1,0,52.2,71.2V0h89.9A121.4,121.4,0,0,0,328,20.2a122.2,122.2,0,0,0,53.5,101.4A121,121,0,0,0,448,140.6Z"/></svg>
+          </a>
+          <a href="https://x.com/LorenaJClowers" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 512 512"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lorenajclowers/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 448 512"><path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-70.92-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,70.94-6.43,94.33s-1.85,73.27,6.43,94.33a54,54,0,0,0,30.41,30.41c21,8.29,70.92,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-70.94,6.43-94.33S357.11,182.7,348.71,161.65ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM398.8,80H49.2A49.2,49.2,0,0,0,0,129.2V382.8A49.2,49.2,0,0,0,49.2,432H398.8a49.2,49.2,0,0,0,49.2-49.2V129.2A49.2,49.2,0,0,0,398.8,80Z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@lorenajclowers" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 576 512"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6C15 167 15 256 15 256s0 89 11.3 131.9c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.1 48.3-47.8 11.3-42.9 11.3-131.9 11.3-131.9s0-89-11.3-131.9zM232 336V176l142.7 80L232 336z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Website Design</a>
+        <a href="#services">Website Strategy</a>
+        <a href="#services">User Experience</a>
+        <a href="#services">SEO</a>
+        <a href="#services">Digital Growth</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="https://www.tiktok.com/@lorenajclowers" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://x.com/LorenaJClowers" target="_blank" rel="noopener">X (Twitter)</a>
+        <a href="https://www.instagram.com/lorenajclowers/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@lorenajclowers" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Lorena J. Clowers | Clowers Growth Advisory. All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="back-to-top" id="backToTop" onclick="scrollToTop()">&uarr;</div>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.position = 'absolute';
+    nav.style.top = '70px';
+    nav.style.right = '20px';
+    nav.style.background = '#fff';
+    nav.style.padding = '20px';
+    nav.style.borderRadius = '10px';
+    nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+  }
+
+  const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('active'); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealElements.forEach(el => observer.observe(el));
+
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 400);
+  });
+
+  function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function() {
+      const nav = document.getElementById('navLinks');
+      if (window.innerWidth <= 900) { nav.style.display = 'none'; }
+    });
+  });
+
+  const form = document.getElementById('contactForm');
+  const statusBox = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span>Sending...';
+    statusBox.style.display = 'none';
+    statusBox.className = 'form-status';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        statusBox.textContent = 'Thank you. Your message has been sent successfully. I will get back to you within 24 to 48 hours.';
+        statusBox.className = 'form-status success';
+        form.reset();
+      } else {
+        statusBox.textContent = 'Something went wrong. Please try again or email me directly at lorenaclowers.web@gmail.com';
+        statusBox.className = 'form-status error';
+      }
+    } catch (error) {
+      statusBox.textContent = 'Something went wrong. Please try again or email me directly at lorenaclowers.web@gmail.com';
+      statusBox.className = 'form-status error';
+    }
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Start My Website Growth Journey';
+    statusBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+
+</body>
+</html>
